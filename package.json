@@ -1,0 +1,15 @@
+{
+  "name": "react-hoc-examples",
+  "version": "0.0.0",
+  "description": "React Higher Order Components examples",
+  "main": "index.js",
+  "dependencies": {
+    "run-js": "1.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "run-js"
+  },
+  "author": "franleplant@gmail.com",
+  "license": "MIT"
+}
