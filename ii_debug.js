@@ -10,7 +10,11 @@ function replacer(key, value) {
 }
 
 export function stringify(value) {
-  return JSON.stringify(value, replacer, 2)
+  const sj = JSON.stringify(value, replacer, 2).split('\n')
+  if (sj.length === 1) {
+    return sj.join('\n')
+  }
+  return sj.slice(1, -1).join('\n')
 }
 
 // II debug example
@@ -23,7 +27,7 @@ export function IIHOC(WrappedComponent) {
       return (
         <div>
           <h2>
-            HOC Debugger Component
+            HOC Debugger
           </h2>
           <p>
             Props
@@ -33,7 +37,9 @@ export function IIHOC(WrappedComponent) {
             State
           </p>
           <pre>{stringify(this.state)}</pre>
-          {super.render()}
+          <div>
+            {super.render()}
+          </div>
         </div>
       )
     }
